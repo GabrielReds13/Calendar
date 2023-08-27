@@ -88,7 +88,7 @@ export default {
         mesAnterior = dayjs(dataAtual).format(`YYYY-${parseInt(formatarMes) - 1}-${2}`)
       }
       const pegarDiasAnteriores = dayjs(mesAnterior).daysInMonth()
-      const calcMesAnterior = pegarDiasAnteriores - this.diasNoMesAtual.length
+      const calcMesAnterior = this.diasNoMesAtual.length - pegarDiasAnteriores
 
       this.diasNoMesAnterior.shift()
       for(let i = 1; i < (calcMesAnterior + 1); i++) {
@@ -108,7 +108,7 @@ export default {
         mesPosterior = dayjs(dataAtual).format(`YYYY-${parseInt(formatarMes) - 1}-${2}`)
       }
       const pegarDiasPosteriores = dayjs(mesPosterior).daysInMonth()
-      const calcMesPosterior = pegarDiasPosteriores - this.diasNoMesAtual.length
+      const calcMesPosterior = this.diasNoMesAtual.length - pegarDiasPosteriores
 
       this.diasNoMesPosterior.shift()
       for(let i = 1; i < (calcMesPosterior + 1); i++) {
